@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Created by SharpDevelop.
  * User: zied
  * Date: 27-May-19
@@ -56,6 +56,26 @@ namespace window1
 			            {
 			                cnn.Close();}
 	
+		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+		//Création de la chaine de connexion
+		string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= Base.mdb"; //Création de l'objet de connexion
+		OleDbConnection  cnn = new OleDbConnection(StrCnn);
+		//ouverture de la connexion
+				try{
+				    cnn.Open();
+						string req="insert into T1 values('"+textBox1.Text+"','"+textBox2.Text+"')";
+						OleDbCommand cmd=new OleDbCommand(req,cnn);
+						cmd.ExecuteNonQuery();
+						MessageBox.Show("ajout avec succès");}
+				            catch(Exception ex)
+				            {MessageBox.Show(ex.Message+"errrrur");}
+				            finally
+				            {
+				                cnn.Close();}
+			
 		}
 	}
 }
