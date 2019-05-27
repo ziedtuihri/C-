@@ -46,8 +46,8 @@ string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb"; //Cré
          OleDbDataReader dr =cmd.ExecuteReader();
          if(dr.HasRows==true){
              while(dr.Read()){
-                 textBox3.Text=dr.GetString(1);
-                 textBox2.Text=dr.GetString(2);
+                 textBox2.Text=dr.GetString(1);
+                 textBox3.Text=dr.GetString(2);
              }
             }else MessageBox.Show("le premier  champs n'existe pas  ");
                      dr.Close();
@@ -57,6 +57,40 @@ string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb"; //Cré
             { 
                 cnn.Close();}
 			
+		}
+		
+		void Button4Click(object sender, EventArgs e)
+		{
+			string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb"; //Création de l'objet de connexion
+            OleDbConnection  cnn = new OleDbConnection(StrCnn);
+            //ouverture de la connexion
+            String a,b,c;
+            a=textBox1.Text;
+            b=textBox2.Text;
+            c=textBox3.Text;    
+         try{
+                cnn.Open();
+             String ch="update identif set age='"+b+"' , annee='"+c+"' where titre='"+a+"' ";
+             OleDbCommand cmd=new OleDbCommand(ch,cnn);
+             cmd.ExecuteNonQuery();MessageBox.Show("trés bien modifier ");
+         }catch(Exception ex)
+            {MessageBox.Show(ex.Message+"errrrur");}
+            finally
+            { 
+                cnn.Close();}
+			
+		}
+		
+		void Button5Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			textBox1.Text="";
+           	textBox2.Text="";
+            textBox3.Text=""; 
 		}
 	}
 }
