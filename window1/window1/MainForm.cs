@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Created by SharpDevelop.
  * User: zied
  * Date: 27-May-19
@@ -37,10 +37,10 @@ namespace window1
 		String b,a;
             a=textBox1.Text; b=textBox2.Text;
             //Création de la chaine de connexion
-string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= Base.mdb"; //Création de l'objet de connexion
-OleDbConnection  cnn = new OleDbConnection(StrCnn);
-//ouverture de la connexion
-			try{ 
+		string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= Base.mdb"; //Création de l'objet de connexion
+		OleDbConnection  cnn = new OleDbConnection(StrCnn);
+		//ouverture de la connexion
+					try{ 
 			    cnn.Open();
 			string req="SELECT COUNT(*)  from T1 where login='"+a+"' and password='"+b+"'";
 			OleDbCommand cmd=new OleDbCommand(req,cnn);
