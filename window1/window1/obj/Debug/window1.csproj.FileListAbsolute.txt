@@ -7,3 +7,4 @@ C:\Users\zied\Documents\SharpDevelop Projects\C-Sharp-Acces\window1\window1\obj\
 C:\Users\zied\Documents\SharpDevelop Projects\C-Sharp-Acces\window1\window1\obj\Debug\window1.pdb
 C:\Users\zied\Documents\SharpDevelop Projects\C-Sharp-Acces\window1\window1\obj\Debug\window1.Form1.resources
 C:\Users\zied\Documents\SharpDevelop Projects\C-Sharp-Acces\window1\window1\obj\Debug\window1.Form2.resources
+C:\Users\zied\Documents\SharpDevelop Projects\C-Sharp-Acces\window1\window1\obj\Debug\window1.Form3.resources

@@ -67,5 +67,11 @@ namespace window1
                     textBox2.Text=DS.Tables["identif"].Rows[comboBox1.SelectedIndex]["annee"].ToString();
 
 		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			Form3 F3=new Form3();
+			F3.Show(); this.Hide();
+		}
 	}
 }
