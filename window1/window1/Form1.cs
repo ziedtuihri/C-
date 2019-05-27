@@ -138,5 +138,13 @@ string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb"; //Cré
                 cnn.Close();}            
 
 		}
+		
+		void Button7Click(object sender, EventArgs e)
+		{
+			Form2 F2=new Form2();
+			  F2.Show();
+       			 this.Hide();
+
+		}
 	}
 }
