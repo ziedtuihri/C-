@@ -112,5 +112,31 @@ string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb"; //Cré
 			                cnn.Close();}
 			
 		}
+		
+		void Button6Click(object sender, EventArgs e)
+		{
+			String a,b,c;
+            a=textBox1.Text;
+            b=textBox2.Text;
+            c=textBox3.Text;
+
+        //Création de la chaine de connexion
+        string StrCnn = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Base.mdb"; 
+        //Création de l'objet de connexion
+        OleDbConnection cnn=new OleDbConnection(StrCnn);
+        try{
+            cnn.Open();
+            String sql="DELETE FROM identif WHERE titre = '" +a+"'";
+            OleDbCommand cmd3=new OleDbCommand(sql,cnn);
+                            
+                cmd3.ExecuteNonQuery();
+                MessageBox.Show("trés bien modifier ");
+         }catch(Exception ex)
+            {MessageBox.Show(ex.Message+"errrrur");}
+            finally
+            { 
+                cnn.Close();}            
+
+		}
 	}
 }
